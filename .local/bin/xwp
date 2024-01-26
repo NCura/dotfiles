@@ -1,6 +1,6 @@
 #!/bin/bash
 # this script requires xwallpapers be installed
 
-dir="$HOME/.local/share/backgrounds"
+dir="$HOME/.local/share/wallpapers"
 
-xwallpaper --zoom $dir/current-wallpaper.png
+xwallpaper --zoom $dir/current-wallpaper.jpg
