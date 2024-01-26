@@ -87,16 +87,3 @@ export QT_QPA_PLATFORMTHEME="gtk2"
 # vi mode
 set -o vi
 
-## make delete key work in st terminal
-tput smkx
-
-# set fetcher for debian or devuan
-distro="$(grep ^NAME /etc/os-release | cut -d'=' -f2 | awk '{print $1}' | sed 's/"//g')"
-
-if [ "$distro" = Devuan ]; then
-    fetcher=dvfetch
-else
-    fetcher=dfetch
-fi
-
-$fetcher
