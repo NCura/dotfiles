@@ -12,3 +12,6 @@ xwp &
 
 # increases speed of the cursor when moving around.
 xset r rate 300 50 &
+
+# start sxhkd
+sxhkd &
