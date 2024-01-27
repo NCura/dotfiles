@@ -64,10 +64,11 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ## exports
 export EDITOR=nvim
-export TERMINAL="st"
-export BROWSER="firefox-esr"
+export TERMINAL="kitty"
+export BROWSER="firefox"
 export LANG=en_US.UTF-8
 
+export RANGER_LOAD_DEFAULT_RC=FALSE
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -84,6 +85,7 @@ export LESS_TERMCAP_us="$(printf '%b' '^[[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '^[[0m')"
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export QT_QPA_PLATFORMTHEME="gtk2"
+
 # vi mode
 set -o vi
 
