@@ -7,7 +7,9 @@ for command in mount umount systemctl updatedb su shutdown reboot poweroff rc-up
 
 alias nala='sudo nala'
 alias apt='nala'
-alias ls='exa --icons --header --all'
+alias ls='exa --icons --header --all --long --no-time --no-user --no-permissions --no-filesize --group-directories-first'
+alias lss='exa --icons --all --across --group-directories-first'
+alias lsl='exa --icons --header --all --long --group-directories-first'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
