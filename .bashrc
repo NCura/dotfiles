@@ -46,3 +46,5 @@ export LESS=-R
 # vi mode
 set -o vi
 
+eval "$(ssh-agent -s)" > /dev/null
+ssh-add ~/.ssh/github &> /dev/null
