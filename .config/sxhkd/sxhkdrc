@@ -1,0 +1,139 @@
+# --------------------------------------------------------
+# super
+# --------------------------------------------------------
+
+super + Tab
+    qtile cmd-obj -o window -f kill
+
+super + space
+    rofi -show drun -modi drun
+
+super + Return
+    qtile cmd-obj -o cmd -f spawn -a "kitty"
+
+super + 1
+    qtile cmd-obj -o group 1 -f toscreen
+
+super + 2
+    qtile cmd-obj -o group 2 -f toscreen
+
+super + 3
+    qtile cmd-obj -o group 3 -f toscreen
+
+super + 4
+    qtile cmd-obj -o group 4 -f toscreen
+
+super + 5
+    qtile cmd-obj -o group 5 -f toscreen
+
+super + 6
+    qtile cmd-obj -o group 6 -f toscreen
+
+super + 7
+    qtile cmd-obj -o group 7 -f toscreen
+
+super + 8
+    qtile cmd-obj -o group 8 -f toscreen
+
+super + 9
+    qtile cmd-obj -o group 9 -f toscreen
+
+super + q
+    qtile cmd-obj -o window -f kill
+
+super + h
+    qtile cmd-obj -o layout -f left
+
+super + l
+    qtile cmd-obj -o layout -f right
+
+super + j
+    qtile cmd-obj -o layout -f down
+
+super + k
+    qtile cmd-obj -o layout -f up
+
+super + c
+    qtile cmd-obj -o group 0 -f dropdown_toggle -a chatgpt
+
+super + n
+    qtile cmd-obj -o group 0 -f dropdown_toggle -a ranger
+
+# --------------------------------------------------------
+# super + shift
+# --------------------------------------------------------
+
+super + shift + Return
+    qtile cmd-obj -o group 0 -f dropdown_toggle -a terminal
+
+super + shift + 1
+    qtile cmd-obj -o window -f togroup -a 1
+
+super + shift + 2
+    qtile cmd-obj -o window -f togroup -a 2
+
+super + shift + 3
+    qtile cmd-obj -o window -f togroup -a 3
+
+super + shift + 4
+    qtile cmd-obj -o window -f togroup -a 4
+
+super + shift + 5
+    qtile cmd-obj -o window -f togroup -a 5
+
+super + shift + 6
+    qtile cmd-obj -o window -f togroup -a 6
+
+super + shift + 7
+    qtile cmd-obj -o window -f togroup -a 7
+
+super + shift + 8
+    qtile cmd-obj -o window -f togroup -a 8
+
+super + shift + 9
+    qtile cmd-obj -o window -f togroup -a 9
+
+super + shift + r ; q
+    qtile cmd-obj -o cmd -f restart
+super + shift + r ; s
+    pkill -USR1 -x sxhkd
+
+super + shift + t
+    qtile cmd-obj -o window -f toggle_floating
+
+super + shift + f
+    qtile cmd-obj -o window -f toggle_fullscreen
+
+super + shift + h
+    qtile cmd-obj -o layout -f shuffle_left
+
+super + shift + l
+    qtile cmd-obj -o layout -f shuffle_right
+
+super + shift + j
+    qtile cmd-obj -o layout -f shuffle_down
+
+super + shift + k
+    qtile cmd-obj -o layout -f shuffle_up
+
+# --------------------------------------------------------
+# super + control
+# --------------------------------------------------------
+
+super + control + q
+    qtile cmd-obj -o cmd -f shutdown
+
+super + control + h
+    qtile cmd-obj -o layout -f grow_left
+
+super + control + l
+    qtile cmd-obj -o layout -f grow_right
+
+super + control + j
+    qtile cmd-obj -o layout -f grow_down
+
+super + control + k
+    qtile cmd-obj -o layout -f grow_up
+
+super + control + n
+    qtile cmd-obj -o layout -f normalize
