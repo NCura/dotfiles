@@ -9,8 +9,7 @@ xmodmap $HOME/.config/x11/.Xmodmap
 picom &
 dunst &
 ####nitrogen --restore &
-
-
+#echo "Starting sxhkd" >> ~/autostart.log
 sxhkd &
 
 dir="$HOME/.local/share/wallpapers"
@@ -19,7 +18,7 @@ png_wallpaper="$dir/current-wallpaper.png"
 
 # Check for JPG wallpaper first, then PNG, and set it using qtile command if exists
 if [ -f "$jpg_wallpaper" ]; then
-    qtile cmd-obj -o cmd -f screen[0].set_wallpaper -a "$jpg_wallpaper" -a fill &
+   qtile cmd-obj -o screen -f set_wallpaper -a "$jpg_wallpaper" &
 elif [ -f "$png_wallpaper" ]; then
-    qtile cmd-obj -o cmd -f screen[0].set_wallpaper -a "$png_wallpaper" -a fill &
+   qtile cmd-obj -o screen -f set_wallpaper -a "$png_wallpaper" &
 fi

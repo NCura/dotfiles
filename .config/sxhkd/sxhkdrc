@@ -3,7 +3,7 @@
 # --------------------------------------------------------
 
 super + Tab
-    qtile cmd-obj -o window -f kill
+    qtile cmd-obj -o cmd -f next_layout
 
 super + space
     rofi -show drun -modi drun
@@ -75,7 +75,7 @@ super + shift + 2
 super + shift + 3
     qtile cmd-obj -o window -f togroup -a 3
 
-super + shift + 4
+	super + shift + 4
     qtile cmd-obj -o window -f togroup -a 4
 
 super + shift + 5

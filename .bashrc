@@ -1,4 +1,8 @@
-## If not running interactively, don't do anything
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 ## Change color of command prompt

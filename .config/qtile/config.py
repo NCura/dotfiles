@@ -1,7 +1,7 @@
 import os
 import subprocess
 from libqtile import bar, layout, qtile, widget, hook
-from libqtile.config import Click, Drag, Group, Match, Screen, Rule, ScratchPad, DropDown
+from libqtile.config import Click, Drag, Group, Match, Screen, Rule, ScratchPad, DropDown, Key
 from libqtile.lazy import lazy
 
 # --------------------------------------------------------
@@ -10,6 +10,8 @@ from libqtile.lazy import lazy
 
 mod = "mod4"
 wmname = "LG3D"
+terminal = "kitty"
+keys = [Key([mod], "o", lazy.spawn(terminal), desc="Launch terminal")]
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
@@ -32,9 +34,9 @@ dgroups_key_binder = None
 # --------------------------------------------------------
 
 groups.append(ScratchPad("0", [
-    DropDown("chatgpt", "chromium --app=https://chat.openai.com", x=0.3, y=0.1, width=0.50, height=0.6, on_focus_lost_hide=False),
-    DropDown("terminal", "kitty", x=0.3, y=0.1, width=0.40, height=0.4, on_focus_lost_hide=False),
-    DropDown("ranger", "kitty -e 'ranger'", x=0.3, y=0.1, width=0.50, height=0.6, on_focus_lost_hide=False),
+    DropDown("chatgpt", "chromium --app=https://chat.openai.com", x=0.71, y=0, width=0.29, height=1, on_focus_lost_hide=False, opacity=1),
+    DropDown("terminal", "kitty", x=0.3, y=0.1, width=0.40, height=0.4, on_focus_lost_hide=False, opacity=1),
+    DropDown("ranger", "kitty -e 'ranger'", x=0.3, y=0.1, width=0.50, height=0.6, on_focus_lost_hide=False, opacity=1),
 ]))
 
 # --------------------------------------------------------
@@ -82,14 +84,15 @@ extension_defaults = widget_defaults.copy()
 widget_list = [
     widget.CurrentLayout(),
     widget.GroupBox(),
-    widget.Prompt(),
-    widget.WindowName(),
-    widget.Chord(
-        chords_colors={
-            "launch": ("#ff0000", "#ffffff"),
-        },
-        name_transform=lambda name: name.upper(),
-    ),
+    #widget.Prompt(),
+    #widget.WindowName(),
+    #widget.Chord(
+    #    chords_colors={
+    #        "launch": ("#ff0000", "#ffffff"),
+    #    },
+    #    name_transform=lambda name: name.upper(),
+    #),
+    widget.Spacer(),
     widget.Systray(),
     widget.Clock(format="%Y-%m-%d %a %I:%M %p")
 ]
@@ -148,9 +151,9 @@ def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
 
-@hook.subscribe.current_screen_change
-def toggle_bar(scrren):
-    if screen.group.name == "1":
-        screen.top.show()
-    else:
-        screen.top.hide()
+# @hook.subscribe.current_screen_change
+# def toggle_bar(scrren):
+#     if screen.group.name == "1":
+#         screen.top.show()
+#     else:
+#         screen.top.hide()
