@@ -11,7 +11,8 @@ from libqtile.lazy import lazy
 mod = "mod4"
 wmname = "LG3D"
 terminal = "kitty"
-keys = [Key([mod], "o", lazy.spawn(terminal), desc="Launch terminal")]
+#keys = [Key([mod], "o", lazy.spawn(terminal), desc="Launch terminal")]
+keys = []
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
@@ -26,7 +27,18 @@ auto_minimize = True # If things like steam games want to auto-minimize themselv
 # Groups
 # --------------------------------------------------------
 
-groups = [Group(i) for i in "123456789"]
+groups = [
+    Group("1", layout='monadtall'),
+    Group("2", layout='monadtall'),
+    Group("3", layout='columns'),
+    Group("4", layout='monadtall'),
+    Group("5", layout='monadtall'),
+    Group("6", layout='monadtall'),
+    Group("7", layout='monadtall'),
+    Group("8", layout='monadtall'),
+    Group("9", layout='monadtall'),
+]
+
 dgroups_key_binder = None
 
 # --------------------------------------------------------
@@ -45,10 +57,10 @@ groups.append(ScratchPad("0", [
 
 layout_theme = { 
     "border_width": 3,
-    "margin": 15,
-    "border_focus": "d75f5f",
+    "margin": 5,
+    "border_focus": "deb887",
     "border_normal": "FFFFFF",
-    "single_border_width": 3
+    "single_border_width": 1
 }
 
 # --------------------------------------------------------
@@ -73,7 +85,7 @@ layouts = [
 widget_defaults = dict(
     font="sans",
     fontsize=12,
-    padding=3,
+    padding=1,
 )
 extension_defaults = widget_defaults.copy()
 

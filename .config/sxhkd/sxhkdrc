@@ -11,6 +11,18 @@ super + space
 super + Return
     qtile cmd-obj -o cmd -f spawn -a "kitty"
 
+super + F8
+    playerctl play-pause
+
+super + F10
+    pactl set-sink-mute bluez_output.88_C9_E8_FC_24_F9.1 toggle
+
+super + F11
+    pactl set-sink-volume bluez_output.88_C9_E8_FC_24_F9.1 -5%
+
+super + F12
+    pactl set-sink-volume bluez_output.88_C9_E8_FC_24_F9.1 +5%
+
 super + 1
     qtile cmd-obj -o group 1 -f toscreen
 
@@ -41,11 +53,14 @@ super + 9
 super + q
     qtile cmd-obj -o window -f kill
 
+super + f
+    qtile cmd-obj -o window -f toggle_fullscreen
+
+super + g
+    qtile cmd-obj -o group 0 -f dropdown_toggle -a chatgpt
+
 super + h
     qtile cmd-obj -o layout -f left
-
-super + l
-    qtile cmd-obj -o layout -f right
 
 super + j
     qtile cmd-obj -o layout -f down
@@ -53,8 +68,11 @@ super + j
 super + k
     qtile cmd-obj -o layout -f up
 
-super + c
-    qtile cmd-obj -o group 0 -f dropdown_toggle -a chatgpt
+super + l
+    qtile cmd-obj -o layout -f right
+
+super + b
+    vivaldi
 
 super + n
     qtile cmd-obj -o group 0 -f dropdown_toggle -a ranger
@@ -75,7 +93,7 @@ super + shift + 2
 super + shift + 3
     qtile cmd-obj -o window -f togroup -a 3
 
-	super + shift + 4
+super + shift + 4
     qtile cmd-obj -o window -f togroup -a 4
 
 super + shift + 5
@@ -95,14 +113,18 @@ super + shift + 9
 
 super + shift + r ; q
     qtile cmd-obj -o cmd -f restart
+    
 super + shift + r ; s
     pkill -USR1 -x sxhkd
 
 super + shift + t
     qtile cmd-obj -o window -f toggle_floating
 
+super + shift + p
+    xcolor -s
+
 super + shift + f
-    qtile cmd-obj -o window -f toggle_fullscreen
+    qtile cmd-obj -o cmd -f hide_show_bar
 
 super + shift + h
     qtile cmd-obj -o layout -f shuffle_left
@@ -116,12 +138,21 @@ super + shift + j
 super + shift + k
     qtile cmd-obj -o layout -f shuffle_up
 
+super + shift + c
+    rofi -show calc -modi calc -no-show-match -no-sort
+
+super + shift + b
+    vivaldi --incognito
+
 # --------------------------------------------------------
 # super + control
 # --------------------------------------------------------
 
 super + control + q
     qtile cmd-obj -o cmd -f shutdown
+
+super + control + t ; plus
+    $HOME/.config/sxhkd/scripts/increase_font_size.sh
 
 super + control + h
     qtile cmd-obj -o layout -f grow_left
